@@ -32,6 +32,11 @@ p {
   padding: 0;
 }
 
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
 .page2 .footer {
   width: 100vw;
   position: relative;
@@ -57,6 +62,14 @@ p {
   justify-content: center;
   align-items: center;
   gap: 1em;
+}
+
+.page2 .wrapper-reveal-img {
+  overflow-x: hidden;
+}
+
+.page2 .reveal-image {
+  animation: reveal-lr 4s ease-in-out forwards;
 }
 
 .page {
@@ -103,6 +116,10 @@ p {
 
 .slideInFadeIn {
   animation: slideInFadeIn 2s ease-in-out forwards;
+}
+
+.bigSlideInFadeIn {
+  animation: bigSlideInFadeIn 2500ms ease-in-out forwards;
 }
 
 .page1 .logo {

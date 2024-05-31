@@ -37,7 +37,7 @@ function startTypewriter(nameContent) {
   const elementsArr = Array.from(elements);
 
   function chainTypewriters(index) {
-    if (index >= elementsArr.length) return; // Stop if no more elements
+    if (index >= elementsArr.length) return; // Interrompe loop após último elemento
 
     const typewriter = new Typewriter(elementsArr[index], {
       loop: false,
@@ -49,16 +49,16 @@ function startTypewriter(nameContent) {
       .typeString(textArr[index])
       .pauseFor(300)
       .callFunction(() => {
-        chainTypewriters(index + 1); // Start the next typewriter effect
+        chainTypewriters(index + 1); // Inicia efeito do próximo elemento
       })
       .start();
   }
 
-  // Start the first typewriter effect
+  // Inicia os typewriters
   chainTypewriters(0);
 }
 
-function setup() {
+function start() {
   document.getElementById("playButton").addEventListener("click", function () {
     const audio = document.getElementById("audioPlayer");
     const pages = document.getElementsByClassName("page");
@@ -68,12 +68,59 @@ function setup() {
     }
     document.getElementById("entrySection").classList.add("hidden");
     audio.play();
+    window.scrollTo({ top: 0 });
     setTimeout(() => {
       startTypewriter(getNameContent());
     }, 1000);
   });
 }
 
+function createIntersectionObservers(classesToObserve) {
+  const observerOptions = {
+    root: null,
+    rootMargin: "0px",
+    threshold: 0,
+  };
+
+  classesToObserve.forEach((classToObserve) => {
+    const elements = document.querySelectorAll("." + classToObserve);
+    console.log("elements");
+    console.log(elements);
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          console.log("Is Intersecting now!");
+          console.log("Entry");
+          console.log(entry);
+          entry.target.classList.add(
+            classToObserve.slice(3, classToObserve.length)
+          );
+          entry.target.classList.remove("hidden");
+        } else {
+          console.log("Is NOT intersecting now!");
+          console.log("Entry");
+          console.log(entry);
+          entry.target.classList.remove(
+            classToObserve.slice(3, classToObserve.length)
+          );
+          entry.target.classList.remove("hidden");
+        }
+      });
+    }, observerOptions);
+    elements.forEach((element) => {
+      observer.observe(element);
+    });
+  });
+}
+
+const classesToObserve = [
+  "to-slideInFadeIn",
+  "to-fadeIn",
+  "to-reveal-image",
+  "to-bigSlideInFadeIn",
+]; // Classes com animações dinâmicas que só devem começar quando são visíveis no viewport.
+
 handleDates();
 setInterval(handleDates, 1000); // Atualizar contagem regressiva a cada segundo.
-setup();
+start();
+createIntersectionObservers(classesToObserve);
