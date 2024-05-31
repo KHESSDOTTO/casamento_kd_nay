@@ -4,10 +4,50 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Casamento - Khess & Nayara</title>
+    <link rel="stylesheet" href="fonts.css" />
+    <link rel="stylesheet" href="animations.css" />
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    Beginning
+    <audio id="audioPlayer" src="Áudio do Convite de casamento.mp3"></audio>
+    <section id="entrySection">
+      <button id="playButton">Play song</button>
+    </section>
+    <section id="page1" class="page page1 hidden">
+      <div class="div1">
+        <div class="logo">
+          <img src="images/logo_casamento_nk.png" height="250" width="350" />
+        </div>
+        <div class="texts">
+          <p class="typewriter-effect biggerTxt"></p>
+          <p class="slideInFadeIn smallerTxt italic">
+            "E ainda que tivesse o dom da profecia e conhecesse todos os
+            mistérios e toda a ciência, e ainda que tivesse toda a fé, de
+            maneira tal que transportasse montes, e não tivesse amor, nada
+            seria."
+          </p>
+          <p class="slideInFadeIn smallerTxt italic bold">Coríntios 13:2</p>
+        </div>
+      </div>
+      <div class="div2 relative">
+        <video autoplay muted loop class="video">
+          <source src="video/video_page1.mp4" type="video/mp4" />
+          Your browser does not support the video... :(
+        </video>
+        <div class="transition-video"></div>
+      </div>
+    </section>
+    <section id="page2" class="page hidden">
+    </section>
+    <section id="page99" class="">
+      <div id="countdown">
+        <span class="time-unit" id="days"></span> days
+        <span class="time-unit" id="hours"></span> hours
+        <span class="time-unit" id="minutes"></span> minutes
+        <span class="time-unit" id="seconds"></span> seconds
+      </div>
+    </section>
+    <script src="https://cdn.jsdelivr.net/npm/typewriter-effect@latest/dist/core.js"></script>
     <script src="script.js"></script>
   </body>
 </html>
