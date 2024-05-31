@@ -1,6 +1,62 @@
+body {
+  overflow-x: hidden;
+  width: 100vw;
+}
+
 body,
 p {
   margin: 0;
+}
+
+.page2 {
+  display: flex;
+  flex-direction: column;
+}
+
+.page2 .wrapper {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: start;
+}
+
+.page2 .icon-txt-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 1em;
+  width: 90%;
+  margin: 0;
+  padding: 0;
+}
+
+.page2 .footer {
+  width: 100vw;
+  position: relative;
+}
+
+.page2 .footer img {
+  position: absolute;
+  right: 2em;
+}
+
+.page2 .title {
+  padding: 1em 0;
+  width: 100%;
+  text-align: center;
+}
+
+.page2 .title-decor {
+  width: 30vw;
+}
+
+.page2 .li {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
 }
 
 .page {
@@ -15,7 +71,15 @@ p {
 .page1 {
   display: flex;
   flex-wrap: nowrap;
+}
+
+.page1,
+.page2 {
   font-family: "Bakerie";
+}
+
+.page2 {
+  font-size: 18.9px;
 }
 
 .page1 .biggerTxt {
