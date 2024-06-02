@@ -58,6 +58,19 @@ function startTypewriter(nameContent) {
   chainTypewriters(0);
 }
 
+function createBackground() {
+  const bgImg = document.createElement("img");
+  const pages = document.getElementsByClassName("page");
+
+  bgImg.src = "images/background.jpg";
+  bgImg.img = "bg";
+  bgImg.className = "full-page-img";
+
+  for (let i = 0; i < pages.length; i++) {
+    pages[i].insertAdjacentElement("afterbegin", bgImg);
+  }
+}
+
 function start() {
   document.getElementById("playButton").addEventListener("click", function () {
     const audio = document.getElementById("audioPlayer");
@@ -95,7 +108,9 @@ function createIntersectionObservers(classesToObserve) {
           entry.target.classList.add(
             classToObserve.slice(3, classToObserve.length)
           );
-          entry.target.classList.remove("hidden");
+          setTimeout(() => {
+            entry.target.style.opacity = 1;
+          }, 100);
         } else {
           console.log("Is NOT intersecting now!");
           console.log("Entry");
@@ -103,7 +118,7 @@ function createIntersectionObservers(classesToObserve) {
           entry.target.classList.remove(
             classToObserve.slice(3, classToObserve.length)
           );
-          entry.target.classList.remove("hidden");
+          entry.target.style.opacity = 0;
         }
       });
     }, observerOptions);

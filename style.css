@@ -3,9 +3,21 @@ body {
   width: 100vw;
 }
 
+body * {
+  z-index: 0;
+}
+
 body,
 p {
   margin: 0;
+}
+
+.full-page-img {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
 }
 
 .page2 {
@@ -26,7 +38,7 @@ p {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(3, 1fr);
-  gap: 1em;
+  gap: 1em 2em;
   width: 90%;
   margin: 0;
   padding: 0;
@@ -59,7 +71,7 @@ a {
 
 .page2 .li {
   display: flex;
-  justify-content: center;
+  justify-content: start;
   align-items: center;
   gap: 1em;
 }
@@ -75,6 +87,9 @@ a {
 .page {
   height: 100vh;
   background-image: url("images/background.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
 }
 
 .fadeIn {
@@ -112,6 +127,11 @@ a {
   height: 100%;
   padding-left: 2em;
   text-align: center;
+}
+
+.to-slideInFadeIn,
+.to-bigSlideInFadeIn {
+  opacity: 0;
 }
 
 .slideInFadeIn {
@@ -206,4 +226,10 @@ a {
 
 .hidden {
   display: none !important;
+}
+
+@media (min-width: 1024px) {
+  .page2 .icon-txt-list {
+    margin-left: 10vw;
+  }
 }
