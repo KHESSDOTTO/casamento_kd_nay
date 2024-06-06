@@ -210,22 +210,125 @@ a {
   display: flex;
   justify-content: center;
   align-items: center;
+  background-image: url("images/init_bg2_convite.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 #playButton {
-  background-color: palevioletred;
-  font-size: 1.2em;
-  font-weight: bold;
-  color: white;
-  text-shadow: black 1px 1px;
-  border-radius: 100px;
-  padding: 10px;
-  box-shadow: black 5px 5px 15px;
+  width: 100px;
+  height: 100px;
   cursor: pointer;
 }
 
 .hidden {
   display: none !important;
+}
+
+.init-left-decor {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 10;
+}
+
+.init-right-decor {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  z-index: 10;
+}
+
+.init-play-btn {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 20;
+}
+
+.init-title-wrapper {
+  position: absolute;
+  top: 5vh;
+  display: flex;
+  justify-content: center;
+}
+
+.init-title {
+  width: 500px;
+  height: 125px;
+  /* border: 1px solid red; */
+  position: relative;
+  font-family: "Aniyah";
+  font-size: 24px;
+  /* font-weight: 600; */
+}
+
+.init-title span:first-child {
+  position: absolute;
+  top: 0;
+  left: 37%;
+}
+
+.init-title span:nth-child(2) {
+  position: absolute;
+  top: 25%;
+  right: 35%;
+}
+
+.init-title span:nth-child(3) {
+  position: absolute;
+  bottom: 0;
+  right: 35%;
+}
+
+.init-text-1,
+.init-text-2,
+.init-text-3 {
+  font-family: "Caladea";
+}
+
+.init-text-1,
+.init-text-2,
+.init-text-3 {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.init-text-1 {
+  bottom: 27.5vh;
+}
+
+.init-text-2 {
+  bottom: 18vh;
+}
+
+.init-text-3 {
+  bottom: 5vh;
+  width: 200px;
+  text-align: center;
+}
+
+.init-text-1 * {
+  width: 15vw;
+  text-align: center;
+  font-size: large;
+}
+
+.init-text-1 div:nth-child(2) {
+  border-left: 2px solid rgb(122, 32, 0);
+  border-right: 2px solid rgb(122, 32, 0);
+  font-size: 40px;
+}
+
+.init-text-2 {
 }
 
 @media (min-width: 1024px) {

@@ -20,7 +20,7 @@ function handleDates() {
   }
 }
 
-function getNameContent() {
+function getName() {
   const idArr = { 1: "Khess", 2: "Nayara" };
   const urlParams = new URLSearchParams(window.location.search);
   const fixedText = " te convidamos para a celebração do nosso casamento.";
@@ -83,7 +83,7 @@ function start() {
     audio.play();
     window.scrollTo({ top: 0 });
     setTimeout(() => {
-      startTypewriter(getNameContent());
+      startTypewriter(getName());
     }, 1000);
   });
 }
