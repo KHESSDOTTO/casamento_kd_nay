@@ -7,3 +7,8 @@
   font-family: "Aniyah";
   src: url("fonts/Aniyah.otf") format("truetype");
 }
+
+@font-face {
+  font-family: "Eyesome Script";
+  src: url("fonts/Eyesome-Script.otf");
+}

@@ -131,8 +131,13 @@ function createIntersectionObservers(classesToObserve) {
 const classesToObserve = [
   "to-slideInFadeIn",
   "to-fadeIn",
+  "to-slowFadeIn",
+  "to-fastFadeIn",
   "to-reveal-image",
+  "to-reveal-image-slow",
   "to-bigSlideInFadeIn",
+  "to-slideUpFadeIn",
+  "to-revSlideInFadeIn",
 ]; // Classes com animações dinâmicas que só devem começar quando são visíveis no viewport.
 
 handleDates();
