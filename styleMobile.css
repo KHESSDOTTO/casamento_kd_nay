@@ -32,6 +32,7 @@
     justify-content: space-between;
     align-items: start;
     padding: 2em 0 0;
+    height: fit-content;
   }
   .page1 .div1 {
     display: flex;
@@ -55,7 +56,7 @@
     width: 100vw;
   }
   .page1 .texts {
-    padding: 0 2em 1em;
+    padding: 0 2em 2em;
   }
   .page1 .biggerTxt {
     min-height: 3em;
@@ -83,14 +84,15 @@
     font-size: 17px;
   }
   .page2 .title-decor {
-    width: 75vw;
+    width: 85vw;
   }
   .page2 .icon-txt-list {
     display: flex;
     flex-direction: column;
-    gap: 1.75em;
+    gap: 6vh;
     width: fit-content;
     max-width: 90%;
+    margin-left: 0;
   }
   .page2 .li {
     gap: 10px;

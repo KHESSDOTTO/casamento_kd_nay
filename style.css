@@ -13,7 +13,7 @@ p {
 }
 
 .page {
-  height: 100vh;
+  /* height: 100vh; */
   background-image: url("images/background.jpg");
   background-repeat: no-repeat;
   background-size: cover;
@@ -53,9 +53,9 @@ p {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(3, 1fr);
-  gap: 1em 2em;
+  gap: 7vh 2em;
   width: 90%;
-  margin: 0;
+  margin: 0 0 0 10vw;
   padding: 0;
 }
 
@@ -67,6 +67,7 @@ a {
 .page2 .footer {
   width: 100vw;
   position: relative;
+  height: 90px;
 }
 
 .page2 .footer img {
@@ -75,7 +76,7 @@ a {
 }
 
 .page2 .title {
-  padding: 1em 0;
+  padding: 1em 0 1.5em;
   width: 100%;
   text-align: center;
 }
@@ -118,6 +119,7 @@ a {
 .page1 {
   display: flex;
   flex-wrap: nowrap;
+  height: 100vh;
 }
 
 .page2 {
@@ -133,7 +135,7 @@ a {
 }
 
 .typewriter-effect {
-  min-height: 1.5em;
+  min-height: 2em;
 }
 
 .page1 .div1 {
@@ -141,6 +143,9 @@ a {
   height: 100%;
   padding-left: 2em;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 5vh;
 }
 
 .to-slideInFadeIn,
@@ -164,13 +169,17 @@ a {
   animation: revSlideInFadeIn 2s ease-in-out forwards;
 }
 
+.upper {
+  text-transform: uppercase;
+}
+
 .page1 .logo {
   padding-top: 2em;
 }
 
 .page1 .texts {
   display: flex;
-  gap: 0.5em;
+  gap: 2vh;
   flex-flow: column nowrap;
   justify-content: start;
   align-items: start;
@@ -205,7 +214,7 @@ a {
 .page1 .div2 {
   width: 55%;
   height: 100%;
-  object-fit: cover;
+  overflow: hidden;
 }
 
 .transition-video {
@@ -487,6 +496,11 @@ a {
   border-radius: 5px;
 }
 
+.page4 {
+  min-height: fit-content;
+  height: fit-content;
+}
+
 .page4 .final-line {
   width: 100vw;
   border: 2px solid #e7c69e;
@@ -528,9 +542,19 @@ a {
   background-color: #e7c69e;
 }
 
+.page4 .videos {
+  position: relative;
+  top: 6px;
+}
+
+.page4 > * > *:last-child {
+  position: relative;
+  right: 1px;
+}
+
 .page4 .videos .video-container,
 .page4 .countdown-row > * {
-  width: 33.34%;
+  width: 33.33%;
   height: 100%;
 }
 
@@ -561,7 +585,6 @@ a {
   font-family: "Bakerie";
 }
 
-.page4,
 .page5 {
   height: fit-content;
   min-height: 100vh;
@@ -657,10 +680,4 @@ a {
   height: 100%;
   width: 100%;
   object-fit: cover;
-}
-
-@media (min-width: 1024px) {
-  .page2 .icon-txt-list {
-    margin-left: 10vw;
-  }
 }

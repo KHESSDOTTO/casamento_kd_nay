@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="animations.css" />
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="styleMobile.css" />
+    <link rel="stylesheet" href="styleXl.css" />
+    <link rel="stylesheet" href="popover-effect.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -59,7 +61,8 @@
         <div>2024</div>
       </div>
       <div class="init-text-2">
-        CONVITE DE CASAMENTO PARA NAYARA<!--<span class="erase-noname"> PARA </span><span class="addName"></span>!-->
+        CONVITE DE CASAMENTO<span class="erase-noname">&nbsp;PARA&nbsp;</span
+        ><span class="addName upper"></span>
       </div>
       <div class="init-text-3">
         Clique no link para abrir o convite de casamento
@@ -143,15 +146,21 @@
             >
           </li>
           <li class="li">
-            <div class="wrapper-reveal-img">
+            <div class="wrapper-reveal-img popover-container">
               <img
                 src="images/resized/page2_icon_flower_tulipa.png"
                 class="to-reveal-image"
                 width="75"
                 height="75"
+                id="popover-btn"
               />
+              <div id="popover" class="popover-content hidden">
+                This is the popover content
+              </div>
             </div>
-            <span class="to-slideInFadeIn">Sua mesa é: Íris</span>
+            <span class="to-slideInFadeIn"
+              >Sua mesa é: <span class="addTable">Íris</span></span
+            >
           </li>
           <li class="li">
             <div class="wrapper-reveal-img">

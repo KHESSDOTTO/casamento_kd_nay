@@ -20,15 +20,39 @@ function handleDates() {
   }
 }
 
-function getName() {
-  const idArr = { 1: "Khess", 2: "Nayara" };
+function getConv(arrConvidados) {
   const urlParams = new URLSearchParams(window.location.search);
+  const id = urlParams.get("id");
+
+  const conv = arrConvidados.filter((cE) => {
+    return cE.id == id;
+  })[0];
+
+  return conv;
+}
+
+function insertNameFirst(arrConvidados) {
   const fixedText = " te convidamos para a celebração do nosso casamento.";
-  return (
-    (idArr[urlParams.get("id")]
-      ? idArr[urlParams.get("id")] + ", carinhosamente"
-      : "Carinhosamente") + fixedText
-  );
+  const conv = getConv(arrConvidados);
+  return (conv ? conv.name + ", carinhosamente" : "Carinhosamente") + fixedText;
+}
+
+function insertVarContent(conv) {
+  if (conv) {
+    const addNameArr = document.querySelectorAll(".addName");
+    const addTableArr = document.querySelectorAll(".addTable");
+    addNameArr.forEach((cE) => {
+      cE.innerHTML = conv.name;
+    });
+    addTableArr.forEach((cE) => {
+      cE.innerHTML = conv.table;
+    });
+  } else {
+    const eraseNoNameArr = document.querySelectorAll(".erase-noname");
+    eraseNoNameArr.forEach((cE) => {
+      cE.innerHTML = "";
+    });
+  }
 }
 
 function startTypewriter(nameContent) {
@@ -58,19 +82,6 @@ function startTypewriter(nameContent) {
   chainTypewriters(0);
 }
 
-function createBackground() {
-  const bgImg = document.createElement("img");
-  const pages = document.getElementsByClassName("page");
-
-  bgImg.src = "images/background.jpg";
-  bgImg.img = "bg";
-  bgImg.className = "full-page-img";
-
-  for (let i = 0; i < pages.length; i++) {
-    pages[i].insertAdjacentElement("afterbegin", bgImg);
-  }
-}
-
 function start() {
   document.getElementById("playButton").addEventListener("click", function () {
     const audio = document.getElementById("audioPlayer");
@@ -83,7 +94,7 @@ function start() {
     audio.play();
     window.scrollTo({ top: 0 });
     setTimeout(() => {
-      startTypewriter(getName());
+      startTypewriter(insertNameFirst(arrConvidados));
     }, 1000);
   });
 }
@@ -128,6 +139,21 @@ function createIntersectionObservers(classesToObserve) {
   });
 }
 
+function startPopover() {
+  document.addEventListener("DOMContentLoaded", () => {
+    const popoverBtn = document.getElementById("popover-btn");
+    const popover = document.getElementById("popover");
+
+    popoverBtn.addEventListener("mouseover", () => {
+      popover.style.display = "block";
+    });
+
+    popoverBtn.addEventListener("mouseout", () => {
+      popover.style.display = "none";
+    });
+  });
+}
+
 const classesToObserve = [
   "to-slideInFadeIn",
   "to-fadeIn",
@@ -140,7 +166,48 @@ const classesToObserve = [
   "to-revSlideInFadeIn",
 ]; // Classes com animações dinâmicas que só devem começar quando são visíveis no viewport.
 
+const arrConvidados = [
+  { id: 1, name: "Amanda", table: "Tulipa" },
+  { id: 2, name: "Yasmin", table: "Tulipa" },
+  { id: 3, name: "Yorrani", table: "Tulipa" },
+  { id: 4, name: "Elza", table: "Tulipa" },
+  { id: 5, name: "Bianca e Ritch", table: "Tulipa" },
+  { id: 6, name: "Valdelucia", table: "Tulipa" },
+  { id: 7, name: "Aline", table: "Lírio" },
+  { id: 8, name: "Elza", table: "Lírio" },
+  { id: 9, name: "Katherine, Anthony e família", table: "Lírio" },
+  { id: 10, name: "Katia", table: "Lírio" },
+  { id: 11, name: "Dawis", table: "Petúnia" },
+  { id: 12, name: "Gessy", table: "Petúnia" },
+  { id: 13, name: "Miguel", table: "Petúnia" },
+  { id: 14, name: "Natalia", table: "Petúnia" },
+  { id: 15, name: "Kimborly e família", table: "Petúnia" },
+  { id: 16, name: "Daisy", table: "Girassol" },
+  { id: 17, name: "Guido e Marta", table: "Girassol" },
+  { id: 18, name: "Keynes", table: "Girassol" },
+  { id: 19, name: "Patrícia", table: "Girassol" },
+  { id: 20, name: "Klauss", table: "Girassol" },
+  { id: 21, name: "Everaldo", table: "Dália" },
+  { id: 22, name: "Julio e Vera", table: "Dália" },
+  { id: 23, name: "William, Kelly e Clara", table: "Dália" },
+  { id: 24, name: "Ary e Márcia", table: "Orquídea" },
+  { id: 25, name: "Karmem", table: "Orquídea" },
+  { id: 26, name: "Ellen", table: "Orquídea" },
+  { id: 27, name: "Lea", table: "Orquídea" },
+  { id: 28, name: "Yoni", table: "Orquídea" },
+  { id: 29, name: "Edgar e Salete", table: "Orquídea" },
+  { id: 30, name: "Fabio e Viviane", table: "Rosa" },
+  { id: 31, name: "Gabriel", table: "Rosa" },
+  { id: 32, name: "João Guilherme e Balu", table: "Rosa" },
+  { id: 33, name: "Felipe", table: "Rosa" },
+  { id: 34, name: "Lucila", table: "Rosa" },
+  { id: 35, name: "Gerson", table: "Rosa" },
+  { id: 36, name: "Lucia, Caroline e Vitor", table: "Rosa" },
+]; // Lista com todos os convidados, relação id, nome e table.
+
 handleDates();
 setInterval(handleDates, 1000); // Atualizar contagem regressiva a cada segundo.
+insertVarContent(getConv(arrConvidados));
 start();
+// startPopover();
 createIntersectionObservers(classesToObserve);
