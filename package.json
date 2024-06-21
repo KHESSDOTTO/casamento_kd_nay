@@ -1,12 +1,9 @@
 {
   "name": "convite",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+  "description": "Convite de Casamento",
+  "scripts": {},
   "keywords": [],
-  "author": "",
+  "author": "Khess",
   "license": "ISC"
 }
