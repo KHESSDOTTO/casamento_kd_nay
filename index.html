@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Casamento - Khess & Nayara</title>
+    <link rel="stylesheet" href="fonts.css" />
+    <link rel="stylesheet" href="animations.css" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="styleMobile.css" />
+    <link rel="stylesheet" href="styleXl.css" />
+    <link rel="stylesheet" href="popover-effect.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Caladea:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Ovo&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <audio
+      id="audioPlayer"
+      src="audio/Áudio do Convite de casamento.mp3"
+    ></audio>
+    <section id="entrySection">
+      <img
+        src="images/init_left_decor_convite.png"
+        alt="left-decor"
+        class="init-left-decor"
+      />
+      <img
+        src="images/init_right_decor_convite.png"
+        alt="right-decor"
+        class="init-right-decor"
+      />
+      <div class="init-play-btn">
+        <img
+          src="images/init_btn_logo_convite.png"
+          alt="play-button-open-invitation"
+          id="playButton"
+        />
+      </div>
+      <div class="init-title-wrapper">
+        <div class="init-title">
+          <span>Nayara</span>
+          <span>l</span>
+          <span>Khess</span>
+        </div>
+      </div>
+      <div class="init-text-1">
+        <div>SEPT</div>
+        <div>14</div>
+        <div>2024</div>
+      </div>
+      <div class="init-text-2">
+        CONVITE DE CASAMENTO<span class="erase-noname">&nbsp;PARA&nbsp;</span
+        ><span class="addName upper"></span>
+      </div>
+      <div class="init-text-3">
+        Clique no link para abrir o convite de casamento
+      </div>
+    </section>
+    <section id="page1" class="page page1 hidden">
+      <div class="div1">
+        <div class="logo">
+          <img src="images/logo_casamento_nk.png" height="250" width="350" />
+        </div>
+        <div class="texts">
+          <p class="typewriter-effect biggerTxt"></p>
+          <p class="to-slideInFadeIn smallerTxt italic">
+            "E ainda que tivesse o dom da profecia e conhecesse todos os
+            mistérios e toda a ciência, e ainda que tivesse toda a fé, de
+            maneira tal que transportasse montes, e não tivesse amor, nada
+            seria."
+          </p>
+          <p class="to-slideInFadeIn smallerTxt italic bold">Coríntios 13:2</p>
+        </div>
+      </div>
+      <div class="div2 relative">
+        <video autoplay muted loop class="video">
+          <source
+            src="https://casamento-khess-nay.s3.us-east-2.amazonaws.com/video_page1.mp4"
+            type="video/mp4"
+          />
+          Your browser does not support the video...
+        </video>
+        <div class="transition-video"></div>
+      </div>
+    </section>
+    <section id="page2" class="page page2 hidden">
+      <div class="title">
+        <img src="images/page2_title_decoration.png" class="title-decor" />
+      </div>
+      <div class="wrapper anim-wrapper">
+        <ul class="icon-txt-list biggerTxt">
+          <li class="li">
+            <div class="wrapper-reveal-img">
+              <img
+                src="images/resized/page2_icon_parking.png"
+                class="to-reveal-image"
+                width="75"
+                height="75"
+              />
+            </div>
+            <span class="to-slideInFadeIn"
+              >Estacionamento com Valet, valor R$35,00</span
+            >
+          </li>
+          <li class="li">
+            <div class="wrapper-reveal-img">
+              <img
+                src="images/resized/page2_icon_suit.png"
+                class="to-reveal-image"
+                width="75"
+                height="75"
+              />
+            </div>
+            <span class="to-slideInFadeIn">
+              Traje social,
+              <span class="bold"
+                ><a
+                  href="https://br.pinterest.com/laismantovani/traje-social-casual-casamento/"
+                  target="_blank"
+                  >clique</a
+                ></span
+              >
+              para consultar sugestões</span
+            >
+          </li>
+          <li class="li">
+            <div class="wrapper-reveal-img">
+              <img
+                src="images/resized/page2_icon_playground.png"
+                class="to-reveal-image"
+                width="75"
+                height="75"
+              />
+            </div>
+            <span class="to-slideInFadeIn"
+              >Playground com monitor, valor R$69,90</span
+            >
+          </li>
+          <li class="li">
+            <div class="wrapper-reveal-img popover-container">
+              <img
+                src="images/resized/page2_icon_flower_tulipa.png"
+                class="to-reveal-image"
+                width="75"
+                height="75"
+                id="popover-btn"
+              />
+              <div id="popover" class="popover-content hidden">
+                This is the popover content
+              </div>
+            </div>
+            <span class="to-slideInFadeIn"
+              >Sua mesa é: <span class="addTable">Íris</span></span
+            >
+          </li>
+          <li class="li">
+            <div class="wrapper-reveal-img">
+              <img
+                src="images/resized/page2_icon_acessora.png"
+                class="to-reveal-image"
+                width="75"
+                height="75"
+              />
+            </div>
+            <span class="to-slideInFadeIn bold"
+              ><a
+                href="https://api.whatsapp.com/send/?phone=5511985224604&text&type=phone_number&app_absent=0"
+                target="_blank"
+                >Contato acessora: 11 98522-4604 - Kris</a
+              ></span
+            >
+          </li>
+          <li class="li">
+            <a
+              href="https://music.youtube.com/playlist?list=PLYGkHuzf_qj0vvDOn7eE7RM59rbthUOWA"
+              target="_blank"
+            >
+              <div class="wrapper-reveal-img">
+                <img
+                  src="images/resized/page2_icon_music.png"
+                  class="to-reveal-image"
+                  width="75"
+                  height="75"
+                />
+              </div>
+            </a>
+            <span class="to-slideInFadeIn bold"
+              ><a
+                href="https://music.youtube.com/playlist?list=PLYGkHuzf_qj0vvDOn7eE7RM59rbthUOWA"
+                target="_blank"
+                >Sugestão de música</a
+              ></span
+            >
+          </li>
+        </ul>
+      </div>
+      <div class="footer relative">
+        <img
+          src="images/resized/icon_heart.png"
+          class="to-bigSlideInFadeIn"
+          width="75"
+        />
+      </div>
+    </section>
+    <section id="page3" class="page page3 hidden">
+      <div id="firstpart-pg3">
+        <div class="to-slideInFadeIn">
+          <img
+            id="left-img-pg3"
+            src="images/page3_photo_nayara_khess.png"
+            alt="Nay & Khess photo"
+          />
+        </div>
+        <div>
+          <div class="calendar-border to-slideInFadeIn">
+            <div class="calendar-container">
+              <img
+                class="calendar-img to-slideInFadeIn"
+                src="images/page3_calendar.png"
+                alt="Calendar - Wedding Day: September, 14, 2024"
+              />
+              <img
+                id="calendar-heart"
+                class="to-bigSlideInFadeIn"
+                src="images/resized/icon_heart.png"
+                alt="September, 14, 2024 - Marriage date"
+                width="30px"
+                height="30px"
+              />
+            </div>
+          </div>
+        </div>
+        <div class="to-slideInFadeIn">
+          <p>
+            “Pois onde estiver o amor, ali estará também o nosso coração.” - Lc.
+            12:34
+          </p>
+        </div>
+      </div>
+      <div id="secondpart-pg3">
+        <div class="to-fastFadeIn">
+          <a
+            class="to-slideInFadeIn"
+            href="https://docs.google.com/forms/d/e/1FAIpQLSfx9vTfAiYPkoJiksVKRz0QMgZDjQafw31HwoO4B-QcPWy3NA/viewform"
+            target="_blank"
+          >
+            <div>CONFIRMAÇÃO DE PRESENÇA</div>
+          </a>
+          <a
+            class="to-slideInFadeIn"
+            href="https://docs.google.com/forms/d/e/1FAIpQLSfx9vTfAiYPkoJiksVKRz0QMgZDjQafw31HwoO4B-QcPWy3NA/viewform"
+            target="_blank"
+          >
+            <img
+              src="images/page3_icon_presence_confirmation.png"
+              width="80px"
+            />
+          </a>
+        </div>
+        <div class="to-revSlideInFadeIn">
+          <video autoplay muted loop class="video">
+            <source
+              src="https://casamento-khess-nay.s3.us-east-2.amazonaws.com/video_page3.mp4"
+              type="video/mp4"
+            />
+            Your browser does not support the video... :(
+          </video>
+        </div>
+      </div>
+    </section>
+    <section id="page4" class="page page4 hidden">
+      <div class="header">
+        <img
+          class="to-slowFadeIn"
+          src="images/page4_icon_double_arrow.png"
+          alt="intro-icon"
+        />
+        <h1 class="title to-slowFadeIn">SAVE THE DATE</h1>
+      </div>
+      <div class="videos">
+        <div class="video-container">
+          <video autoplay muted loop class="to-slideInFadeIn">
+            <source
+              src="https://casamento-khess-nay.s3.us-east-2.amazonaws.com/video1_page4.mp4"
+              type="video/mp4"
+            />
+            Your browser does not support the video... :(
+          </video>
+        </div>
+        <div class="video-container">
+          <video autoplay muted loop class="to-fadeIn">
+            <source
+              src="https://casamento-khess-nay.s3.us-east-2.amazonaws.com/video2_page4.mp4"
+              type="video/mp4"
+            />
+            Your browser does not support the video... :(
+          </video>
+        </div>
+        <div class="video-container">
+          <video autoplay muted loop class="to-revSlideInFadeIn">
+            <source
+              src="https://casamento-khess-nay.s3.us-east-2.amazonaws.com/video3_page4.mp4"
+              type="video/mp4"
+            />
+            Your browser does not support the video... :(
+          </video>
+        </div>
+      </div>
+      <div class="countdown-row">
+        <div class="to-slideInFadeIn">
+          <div id="days" class="countdown-time"></div>
+          <div>DIAS</div>
+        </div>
+        <div class="to-fadeIn">
+          <div id="hours" class="countdown-time"></div>
+          <div>HORAS</div>
+        </div>
+        <div class="to-revSlideInFadeIn relative">
+          <div id="minutes" class="countdown-time"></div>
+          <div>MINUTOS</div>
+          <div class="seconds-counter-small">
+            <span style="color: red">&#10084;&nbsp;</span>Segundos:
+            <span id="seconds"></span>
+          </div>
+        </div>
+      </div>
+      <div class="footer">
+        <a
+          href="https://www.google.com/maps/place/Coco+Bambu+Restaurante+(Anhembi)/@-23.5127888,-46.656641,17z/data=!4m7!3m6!1s0x94cef7e12706aaab:0xbce0fd7843af347b!8m2!3d-23.5127429!4d-46.6537506!15sChJjb2NvIGJhbWJ1IGFuaGVtYmkiA4gBAVoUIhJjb2NvIGJhbWJ1IGFuaGVtYmmSARJzZWFmb29kX3Jlc3RhdXJhbnTgAQA!16s%2Fg%2F11c5g_t1dm?entry=tts"
+          target="_blank"
+        >
+          <div>Rua Domingos Fasolari, 110 - Coco Bambu Anhembi</div>
+        </a>
+        <div class="final-line"></div>
+      </div>
+    </section>
+    <section id="page5" class="page page5 hidden">
+      <div class="wrapper-reveal-img header">
+        <img src="images/page5_icon_gift.png" class="to-reveal-image-slow" />
+      </div>
+      <div class="main-section">
+        <div class="text-wrapper">
+          <p>
+            Caso deseje nos presentear, use o QR Code, PIX ou TED para
+            contribuir com a nossa lua de mel. Qualquer presente que você queira
+            oferecer será muito apreciado.
+          </p>
+          <br />
+          <br />
+          <p>
+            Agência: 9293 Conta: 26823-0 Itaú<br />
+            Chave PIX, CPF: 366.143.598-19
+          </p>
+        </div>
+        <div class="codeQr-wrapper">
+          <img id="codeQr" src="images/page5_codeQR.png" alt="QR Code" />
+        </div>
+      </div>
+      <div class="footer">
+        <div class="video-wrapper">
+          <video autoplay loop muted>
+            <source
+              src="https://casamento-khess-nay.s3.us-east-2.amazonaws.com/video1_page5.mp4"
+              type="video/mp4"
+            />
+            Sorry, video not supported by your browser... :(
+          </video>
+        </div>
+        <div class="video-wrapper">
+          <video autoplay loop muted>
+            <source
+              src="https://casamento-khess-nay.s3.us-east-2.amazonaws.com/video2_page5.mp4"
+              type="video/mp4"
+            />
+            Sorry, video not supported by your browser... :(
+          </video>
+        </div>
+        <div class="video-wrapper">
+          <video autoplay loop muted>
+            <source
+              src="https://casamento-khess-nay.s3.us-east-2.amazonaws.com/video3_page5.mp4"
+              type="video/mp4"
+            />
+            Sorry, video not supported by your browser... :(
+          </video>
+        </div>
+        <div class="video-wrapper">
+          <video autoplay loop muted>
+            <source
+              src="https://casamento-khess-nay.s3.us-east-2.amazonaws.com/video4_page5.mp4"
+              type="video/mp4"
+            />
+            Sorry, video not supported by your browser... :(
+          </video>
+        </div>
+        <div class="video-wrapper">
+          <video autoplay loop muted>
+            <source
+              src="https://casamento-khess-nay.s3.us-east-2.amazonaws.com/video5_page5.mp4"
+              type="video/mp4"
+            />
+            Sorry, video not supported by your browser... :(
+          </video>
+        </div>
+      </div>
+    </section>
+    <script src="https://cdn.jsdelivr.net/npm/typewriter-effect@latest/dist/core.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
