@@ -12,6 +12,15 @@
   .init-title span:nth-child(3) {
     right: 36%;
   }
+  .init-text-1 {
+    bottom: 20vh;
+  }
+  .init-text-2 {
+    bottom: 13vh;
+  }
+  .init-text-3 {
+    bottom: 3vh;
+  }
   .init-text-1,
   .init-text-2,
   .init-text-3 {

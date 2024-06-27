@@ -91,6 +91,9 @@ function startVideos() {
   const videos = document.querySelectorAll("video");
   videos.forEach((video) => {
     video.muted = true;
+    video.playsInline = true;
+    video.controls = false;
+    video.loop = true;
     video.play().catch((error) => {
       console.log("Autoplay prevented:", error);
     });
