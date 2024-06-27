@@ -82,16 +82,31 @@ function startTypewriter(nameContent) {
   chainTypewriters(0);
 }
 
+function startAudio() {
+  const audio = document.getElementById("audioPlayer");
+  audio.play();
+}
+
+function startVideos() {
+  const videos = document.querySelectorAll("video");
+  videos.forEach((video) => {
+    video.muted = true;
+    video.play().catch((error) => {
+      console.log("Autoplay prevented:", error);
+    });
+  });
+}
+
 function start() {
   document.getElementById("playButton").addEventListener("click", function () {
-    const audio = document.getElementById("audioPlayer");
+    startAudio();
+    startVideos();
     const pages = document.getElementsByClassName("page");
     for (let i = 0; i < pages.length; i++) {
       pages[i].classList.remove("hidden");
       pages[i].classList.add("fadeIn");
     }
     document.getElementById("entrySection").classList.add("hidden");
-    audio.play();
     window.scrollTo({ top: 0 });
     setTimeout(() => {
       startTypewriter(insertNameFirst(arrConvidados));
