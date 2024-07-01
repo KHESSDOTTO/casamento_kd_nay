@@ -3,14 +3,17 @@
     width: 90vw !important;
     overflow-x: hidden !important;
   }
+  .init-title {
+    width: 350px;
+  }
   .init-title span:first-child {
-    left: 35%;
+    left: 27%;
   }
   .init-title span:nth-child(2) {
-    right: 36%;
+    right: 30%;
   }
   .init-title span:nth-child(3) {
-    right: 36%;
+    right: 33%;
   }
   .init-text-1 {
     bottom: 20vh;
