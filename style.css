@@ -342,6 +342,11 @@ a {
   bottom: 15vh;
 }
 
+.init-text-2 > p {
+  padding: 0 5vw;
+  text-align: center;
+}
+
 .init-text-3 {
   bottom: 3vh;
   width: 200px;
