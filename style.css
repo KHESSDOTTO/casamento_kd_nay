@@ -438,7 +438,10 @@ a {
 #calendar-heart {
   position: absolute;
   right: 9.5%;
-  top: 47.5%;
+  top: 47%;
+  z-index: -10;
+  width: 35px;
+  height: 35px;
 }
 
 #secondpart-pg3 {
