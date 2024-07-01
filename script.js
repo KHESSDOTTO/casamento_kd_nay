@@ -203,7 +203,7 @@ const arrConvidados = [
   { id: 18, name: "Keynes", table: "Girassol" },
   { id: 19, name: "Patrícia", table: "Girassol" },
   { id: 20, name: "Klauss", table: "Girassol" },
-  { id: 21, name: "Everaldo", table: "Dália" },
+  { id: 21, name: "Everaldo e Ravena", table: "Dália" },
   { id: 22, name: "Julio e Vera", table: "Dália" },
   { id: 23, name: "William, Kelly e Clara", table: "Dália" },
   { id: 24, name: "Ary e Márcia", table: "Orquídea" },
@@ -223,7 +223,7 @@ const arrConvidados = [
     name: "Lucia, Caroline e Vitor",
     table: "Caroline e Vitor: mesa <b>Íris</b>; Lucia: mesa <b>Rosa</b>",
   },
-]; // Lista com todos os convidados, relação id, nome e table.
+]; // Lista com todos os convidados, relação id, nome e mesa.
 
 handleDates();
 setInterval(handleDates, 1000); // Atualizar contagem regressiva a cada segundo.
