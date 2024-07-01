@@ -119,6 +119,12 @@
   .page3 {
     height: fit-content;
   }
+  #calendar-heart {
+    right: 9.25%;
+    top: 46.75%;
+    width: 25px;
+    height: 25px;
+  }
   #firstpart-pg3 {
     flex-direction: column;
     align-items: center;
