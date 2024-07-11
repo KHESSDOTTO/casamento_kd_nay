@@ -234,6 +234,9 @@ a {
 
 .page1 .video {
   height: 100%;
+  width: calc(100% - 1px);
+  object-fit: cover;
+  padding-left: 1px;
 }
 
 #entrySection {
