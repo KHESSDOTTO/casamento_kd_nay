@@ -189,7 +189,7 @@ const arrConvidados = [
   { id: 4, name: "Elza", table: "Tulipa" },
   { id: 5, name: "Bianca e Ritch", table: "Tulipa" },
   { id: 6, name: "Valdelucia", table: "Tulipa" },
-  { id: 7, name: "Aline", table: "Lírio" },
+  { id: 7, name: "Aline", table: "Girassol" },
   { id: 8, name: "Elza", table: "Girassol" },
   { id: 9, name: "Katherine, Anthony e família", table: "Lírio" },
   { id: 10, name: "Katia", table: "Lírio" },
@@ -197,7 +197,7 @@ const arrConvidados = [
   { id: 12, name: "Gessy", table: "Petúnia" },
   { id: 13, name: "Natalia e Miguel", table: "Petúnia" },
   { id: 14, name: "Natalia e Miguel", table: "Petúnia" }, // Repetido propositalmente - ambos os ids enviados corresponderão ao mesmo convite após junção de Natalia e Miguel
-  { id: 15, name: "Kimborly e família", table: "Petúnia" },
+  { id: 15, name: "Kimborly e família", table: "Lírio" },
   { id: 16, name: "Daisy", table: "Girassol" },
   { id: 17, name: "Guido e Marta", table: "Girassol" },
   { id: 18, name: "Keynes", table: "Girassol" },
@@ -223,11 +223,13 @@ const arrConvidados = [
     name: "Lucia, Caroline e Vitor",
     table: "Caroline e Vitor: mesa <b>Íris</b>; Lucia: mesa <b>Rosa</b>",
   },
+  { id: 37, name: "Daniel", table: "Petúnia" },
+  { id: 38, name: "Nanim", table: "Petúnia" },
+  { id: 39, name: "Solange e João", table: "Petúnia" },
 ]; // Lista com todos os convidados, relação id, nome e mesa.
 
 handleDates();
 setInterval(handleDates, 1000); // Atualizar contagem regressiva a cada segundo.
 insertVarContent(getConv(arrConvidados));
 start();
-// startPopover();
 createIntersectionObservers(classesToObserve);
