@@ -185,7 +185,7 @@ const classesToObserve = [
 const arrConvidados = [
   { id: 1, name: "Amanda", table: "Tulipa" },
   { id: 2, name: "Yasmin", table: "Tulipa" },
-  { id: 3, name: "Yorrani", table: "Tulipa" },
+  { id: 3, name: "Yohanna", table: "Tulipa" },
   { id: 4, name: "Elza", table: "Tulipa" },
   { id: 5, name: "Bianca e Ritch", table: "Tulipa" },
   { id: 6, name: "Valdelucia", table: "Tulipa" },
