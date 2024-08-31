@@ -125,23 +125,14 @@ function createIntersectionObservers(classesToObserve) {
   };
 
   classesToObserve.forEach((classToObserve) => {
-    const elements = document.querySelectorAll("." + classToObserve);
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          // console.log("Is Intersecting now!");
-          // console.log("Entry");
-          // console.log(entry);
           entry.target.classList.add(
             classToObserve.slice(3, classToObserve.length)
           );
-          setTimeout(() => {
-            entry.target.style.opacity = 1;
-          }, 100);
+          entry.target.style.opacity = 1;
         } else {
-          // console.log("Is NOT intersecting now!");
-          // console.log("Entry");
-          // console.log(entry);
           entry.target.classList.remove(
             classToObserve.slice(3, classToObserve.length)
           );
@@ -149,9 +140,9 @@ function createIntersectionObservers(classesToObserve) {
         }
       });
     }, observerOptions);
-    elements.forEach((element) => {
-      observer.observe(element);
-    });
+
+    const elements = document.querySelectorAll("." + classToObserve);
+    elements.forEach((element) => observer.observe(element));
   });
 }
 
