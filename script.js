@@ -217,6 +217,7 @@ const arrConvidados = [
   { id: 37, name: "Daniel", table: "Petúnia" },
   { id: 38, name: "Nanim", table: "Petúnia" },
   { id: 39, name: "Solange e João", table: "Petúnia" },
+  { id: 40, name: "Karine e Bruno", table: "Íris" },
 ]; // Lista com todos os convidados, relação id, nome e mesa.
 
 handleDates();
