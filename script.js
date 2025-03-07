@@ -1,23 +1,92 @@
-function handleDates() {
-  const countDownDate = new Date(Date.UTC(2024, 8, 14, 21, 30, 0, 0)).getTime();
+// ----- CONFIG. Variáveis -----
+
+const marriageDate = new Date(Date.UTC(2024, 8, 14, 21, 30, 0, 0)).getTime();
+const classesToObserve = [
+  "to-slideInFadeIn",
+  "to-fadeIn",
+  "to-slowFadeIn",
+  "to-fastFadeIn",
+  "to-reveal-image",
+  "to-reveal-image-slow",
+  "to-bigSlideInFadeIn",
+  "to-slideUpFadeIn",
+  "to-revSlideInFadeIn",
+]; // Classes com animações dinâmicas que só devem começar quando são visíveis no viewport.
+
+const arrConvidados = [
+  { id: 1, name: "Amanda", table: "Tulipa" },
+  { id: 2, name: "Yasmin", table: "Tulipa" },
+  { id: 3, name: "Yohanna", table: "Tulipa" },
+  { id: 4, name: "Elza", table: "Tulipa" },
+  { id: 5, name: "Bianca e Ritch", table: "Tulipa" },
+  { id: 6, name: "Valdelucia", table: "Tulipa" },
+  { id: 7, name: "Aline", table: "Girassol" },
+  { id: 8, name: "Elza", table: "Girassol" },
+  { id: 9, name: "Katherine, Anthony e família", table: "Lírio" },
+  { id: 10, name: "Katia", table: "Lírio" },
+  { id: 11, name: "Dawis", table: "Dália" },
+  { id: 12, name: "Gessy", table: "Petúnia" },
+  { id: 13, name: "Natalia e Miguel", table: "Petúnia" },
+  { id: 14, name: "Natalia e Miguel", table: "Petúnia" }, // Repetido propositalmente - ambos os ids enviados corresponderão ao mesmo convite após junção de Natalia e Miguel
+  { id: 15, name: "Kimborly e família", table: "Lírio" },
+  { id: 16, name: "Daisy", table: "Girassol" },
+  { id: 17, name: "Guido e Marta", table: "Girassol" },
+  { id: 18, name: "Keynes", table: "Girassol" },
+  { id: 19, name: "Patrícia", table: "Girassol" },
+  { id: 20, name: "Klauss", table: "Girassol" },
+  { id: 21, name: "Everaldo e Ravena", table: "Dália" },
+  { id: 22, name: "Julio e Vera", table: "Dália" },
+  { id: 23, name: "William, Kelly e Clara", table: "Dália" },
+  { id: 24, name: "Ary e Márcia", table: "Orquídea" },
+  { id: 25, name: "Carmem", table: "Rosa" },
+  { id: 26, name: "Helen", table: "Rosa" },
+  { id: 27, name: "Lea", table: "Rosa" },
+  { id: 28, name: "Ione", table: "Rosa" },
+  { id: 29, name: "Edgar e Salete", table: "Orquídea" },
+  { id: 30, name: "Fabio e Viviane", table: "Orquídea" },
+  { id: 31, name: "Gabriel", table: "Íris" },
+  { id: 32, name: "João Guilherme e Balu", table: "Íris" },
+  { id: 33, name: "Felipe", table: "Rosa" },
+  { id: 34, name: "Lucila", table: "Rosa" },
+  { id: 35, name: "Gerson", table: "Rosa" },
+  {
+    id: 36,
+    name: "Lucia, Caroline e Vitor",
+    table: "Caroline e Vitor: mesa <b>Íris</b>; Lucia: mesa <b>Rosa</b>",
+  },
+  { id: 37, name: "Daniel", table: "Petúnia" },
+  { id: 38, name: "Nanim", table: "Petúnia" },
+  { id: 39, name: "Solange e João", table: "Petúnia" },
+  { id: 40, name: "Karine e Bruno", table: "Íris" },
+]; // Lista com todos os convidados, relação id, nome e mesa.
+
+// ----- FIM CONFIG. Variáveis -----
+
+
+// ----- FUNÇÕES -----
+
+function handleDates(countdownIntervalId, marriageDate) {
   const now = new Date().getTime();
-  const distance = countDownDate - now;
-  const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-  const hours = Math.floor(
+  const distance = marriageDate - now;
+  const isNegativeDistance = distance < 0;
+
+  if (isNegativeDistance) {
+    if (countdownIntervalId) {
+      clearInterval(countdownIntervalId);
+    }
+  }
+
+  const days = isNegativeDistance ? 0 : Math.floor(distance / (1000 * 60 * 60 * 24));
+  const hours = isNegativeDistance ? 0 : Math.floor(
     (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
   );
-  const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-  const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+  const minutes = isNegativeDistance ? 0 : Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  const seconds = isNegativeDistance ? 0 : Math.floor((distance % (1000 * 60)) / 1000);
 
   document.getElementById("days").innerText = days;
   document.getElementById("hours").innerText = hours;
   document.getElementById("minutes").innerText = minutes;
   document.getElementById("seconds").innerText = seconds;
-
-  if (distance < 0) {
-    clearInterval(countdownFunction);
-    document.getElementById("countdown").innerHTML = "We are married!!";
-  }
 }
 
 function getConv(arrConvidados) {
@@ -161,67 +230,18 @@ function startPopover() {
   });
 }
 
-const classesToObserve = [
-  "to-slideInFadeIn",
-  "to-fadeIn",
-  "to-slowFadeIn",
-  "to-fastFadeIn",
-  "to-reveal-image",
-  "to-reveal-image-slow",
-  "to-bigSlideInFadeIn",
-  "to-slideUpFadeIn",
-  "to-revSlideInFadeIn",
-]; // Classes com animações dinâmicas que só devem começar quando são visíveis no viewport.
+// ----- FIM FUNÇÕES -----
 
-const arrConvidados = [
-  { id: 1, name: "Amanda", table: "Tulipa" },
-  { id: 2, name: "Yasmin", table: "Tulipa" },
-  { id: 3, name: "Yohanna", table: "Tulipa" },
-  { id: 4, name: "Elza", table: "Tulipa" },
-  { id: 5, name: "Bianca e Ritch", table: "Tulipa" },
-  { id: 6, name: "Valdelucia", table: "Tulipa" },
-  { id: 7, name: "Aline", table: "Girassol" },
-  { id: 8, name: "Elza", table: "Girassol" },
-  { id: 9, name: "Katherine, Anthony e família", table: "Lírio" },
-  { id: 10, name: "Katia", table: "Lírio" },
-  { id: 11, name: "Dawis", table: "Dália" },
-  { id: 12, name: "Gessy", table: "Petúnia" },
-  { id: 13, name: "Natalia e Miguel", table: "Petúnia" },
-  { id: 14, name: "Natalia e Miguel", table: "Petúnia" }, // Repetido propositalmente - ambos os ids enviados corresponderão ao mesmo convite após junção de Natalia e Miguel
-  { id: 15, name: "Kimborly e família", table: "Lírio" },
-  { id: 16, name: "Daisy", table: "Girassol" },
-  { id: 17, name: "Guido e Marta", table: "Girassol" },
-  { id: 18, name: "Keynes", table: "Girassol" },
-  { id: 19, name: "Patrícia", table: "Girassol" },
-  { id: 20, name: "Klauss", table: "Girassol" },
-  { id: 21, name: "Everaldo e Ravena", table: "Dália" },
-  { id: 22, name: "Julio e Vera", table: "Dália" },
-  { id: 23, name: "William, Kelly e Clara", table: "Dália" },
-  { id: 24, name: "Ary e Márcia", table: "Orquídea" },
-  { id: 25, name: "Carmem", table: "Rosa" },
-  { id: 26, name: "Helen", table: "Rosa" },
-  { id: 27, name: "Lea", table: "Rosa" },
-  { id: 28, name: "Ione", table: "Rosa" },
-  { id: 29, name: "Edgar e Salete", table: "Orquídea" },
-  { id: 30, name: "Fabio e Viviane", table: "Orquídea" },
-  { id: 31, name: "Gabriel", table: "Íris" },
-  { id: 32, name: "João Guilherme e Balu", table: "Íris" },
-  { id: 33, name: "Felipe", table: "Rosa" },
-  { id: 34, name: "Lucila", table: "Rosa" },
-  { id: 35, name: "Gerson", table: "Rosa" },
-  {
-    id: 36,
-    name: "Lucia, Caroline e Vitor",
-    table: "Caroline e Vitor: mesa <b>Íris</b>; Lucia: mesa <b>Rosa</b>",
-  },
-  { id: 37, name: "Daniel", table: "Petúnia" },
-  { id: 38, name: "Nanim", table: "Petúnia" },
-  { id: 39, name: "Solange e João", table: "Petúnia" },
-  { id: 40, name: "Karine e Bruno", table: "Íris" },
-]; // Lista com todos os convidados, relação id, nome e mesa.
+
+// ----- Execução -----
 
 handleDates();
-setInterval(handleDates, 1000); // Atualizar contagem regressiva a cada segundo.
+
+// Atualizar contagem regressiva a cada segundo.
+let countdownIntervalId = 0;
+countdownIntervalId = setInterval(handleDates, 1000, countdownIntervalId, marriageDate);
+// Fim: atualizar contagem regressiva a cada segundo.
+
 insertVarContent(getConv(arrConvidados));
 start();
 createIntersectionObservers(classesToObserve);

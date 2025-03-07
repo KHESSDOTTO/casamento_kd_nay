@@ -693,3 +693,7 @@ a {
   width: 100%;
   object-fit: cover;
 }
+
+.md-padding-right-desk {
+  padding-right: 12px;
+}
